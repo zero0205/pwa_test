@@ -6,14 +6,17 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Nav_() {
+  let navigate = useNavigate();
   return (
     <div>
     {['lg'].map((expand) => 
         <Navbar key={expand} bg="light" expand={expand} className="mb-3">
           <Container fluid>
-            <Navbar.Brand href="#">TMI</Navbar.Brand>
+            <Button onClick={()=>{navigate(-1)}}>뒤로가기</Button>
+            <Navbar.Brand href="/">TMI</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -27,12 +30,12 @@ function Nav_() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Home</Nav.Link>
-                  <Nav.Link href="#action2">Login</Nav.Link>
-                  <Nav.Link href="#action2">Logout</Nav.Link>
-                  <Nav.Link href="#action2">Setting</Nav.Link>
-                  <Nav.Link href="#action2">Write</Nav.Link>
-                  <Nav.Link href="#action2">Saved</Nav.Link>
+                  <Nav.Link><Link to="/">Home</Link></Nav.Link>
+                  <Nav.Link><Link to="/login">Login</Link></Nav.Link>
+                  <Nav.Link href="/">Logout</Nav.Link>
+                  <Nav.Link href="/">Setting</Nav.Link>
+                  <Nav.Link href="/">Write</Nav.Link>
+                  <Nav.Link href="/">Saved</Nav.Link>
                   <NavDropdown
                     title="Dropdown"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
