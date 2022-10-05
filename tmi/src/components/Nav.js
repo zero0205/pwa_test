@@ -32,8 +32,8 @@ function Nav_() {
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link><Link to="/">Home</Link></Nav.Link>
                   <Nav.Link><Link to="/login">Login</Link></Nav.Link>
-                  <Nav.Link href="/">Logout</Nav.Link>
-                  <Nav.Link href="/">Setting</Nav.Link>
+                  <Nav.Link><Link to="/">Logout</Link></Nav.Link>
+                  <Nav.Link><Link to="/membersetting">Setting</Link></Nav.Link>
                   <Nav.Link href="/">Write</Nav.Link>
                   <Nav.Link href="/">Saved</Nav.Link>
                   <NavDropdown
